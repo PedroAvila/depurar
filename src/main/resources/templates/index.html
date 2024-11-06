@@ -28,21 +28,23 @@
     </main>
   </div>
 
+  <!-- Datatables JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script defer type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
   <script>
     async function loadView(url) {
-      try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          throw new Error('Error al cargar la vista');
+      $.ajax({
+        url: url,
+        success: function (data) {
+          $('#main-content').html(data);
+        },
+        error: function () {
+          $('#main-content').html('<p>Error al cargar la vista</p>');
         }
-
-        const data = await response.text();
-        document.getElementById('main-content').innerHTML = data;
-      } catch (error) {
-        document.getElementById('main-content').innerHTML = '<p>Error al cargar la vista</p>';
-        console.error(error);
-      }
+      });
     }
   </script>
 
