@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    /* Elimina todos los márgenes */
+    padding: 0;
+    /* Elimina todos los paddings */
+    box-sizing: border-box;
+    /* Incluye el padding y el border en el ancho y alto total de los elementos */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    /* Altura de la ventana */
+    width: 100vw;
+    /* Ancho completo de la ventana */
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    width: 200px;
+    margin: 0;
+    /* Ancho fijo para el sidebar */
+}
+
+.sidebar h2 {
+    margin: 0;
+    /* Elimina el margen de los encabezados */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    /* Elimina los puntos de las listas */
+    padding: 0;
+    /* Elimina el padding */
+}
+
+.main {
+    flex-grow: 1;
+    padding: 20px;
+    /* Espaciado interno para el contenido principal */
+}
+
+/* Asegúrate de que el enlace tenga color blanco */
+.a {
+    color: #fff;
+}
